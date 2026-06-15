@@ -21,6 +21,21 @@
 	JOIN customers c 
 	ON i.customer_id = c.customer.id
 	WHERE i.amount < 1000;
-    
-6. 
+
+6. SELECT i.invoice_number, i.amount, i.iva, i.date, s.denomination
+    FROM invoices i 
+    JOIN suppliers s
+    ON s.supplier_number = i.supplier_number
+
+
+7. SELECT EXTRACT(YEAR FROM i.date) AS year, COUNT(*) as invoices_count
+    FROM invoices i
+    WHERE i.iva < 20
+    GROUP BY year
+    ORDER BY year
+
+8. SELECT EXTRACT(YEAR FROM i.date) AS year, COUNT(*) AS invoices_count, SUM(i.amount) AS total_amount
+    FROM invoices i
+    GROUP BY year
+    ORDER BY year
 
