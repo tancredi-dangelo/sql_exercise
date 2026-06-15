@@ -1,0 +1,26 @@
+
+1. SELECT * 
+	FROM customers 
+	WHERE name = "Mario";
+
+2. SELECT name, surname 
+	FROM customers  
+	WHERE year_of_birth = 1982;
+
+3. SELECT COUNT(*) 
+	FROM invoices  
+	WHERE iva = 20;
+
+4. SELECT * 
+	FROM products p 
+	WHERE EXTRACT(YEAR FROM p.data) = 2017 
+	AND (p.is_in production = TRUE OR p.is_on_the_market = TRUE);
+
+5. SELECT * 
+	FROM invoices i 
+	JOIN customers c 
+	ON i.customer_id = c.customer.id
+	WHERE i.amount < 1000;
+    
+6. 
+
